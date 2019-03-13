@@ -71,21 +71,16 @@
         <div class="row">
             <div class="col-md-5 contact-info">
                 <div class="single-info">
-                    <h5>Phone</h5>
-                    <p>+(1) - 123 - 456 - 7890</p>
-                </div>
-                <div class="single-info">
-                    <h5>Email</h5>
-                    <p>do_not_send@gmail.com</p>
-                </div>
-                <div class="single-info">
-                    <h5>Address</h5>
-                    <p>1000 Little Spruce Rd, San Jose, CA, 94065</p>
-                </div>
-                <div class="single-info">
-                    <h5>PHP</h5>
-                    <?php $name = 'PHP TEST'?>
-                    <p><?php echo("Hello") ?></p>
+                    <h5>Contact us</h5>
+                    <p>
+                        <?php
+                        $myfile = fopen("contact.txt", "r") or die("Unable to open file!");
+                        while(!feof($myfile)) {
+                           echo fgets($myfile) . "<br>";
+                        }
+                        fclose($myfile);
+                        ?>
+                    </p>
                 </div>
                 <div class="single-info">
                     <h5>Social</h5>
