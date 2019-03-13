@@ -3,10 +3,17 @@
 <body>
 
 <?php
-echo readfile("contact.txt");
+$myfile = fopen("contact.txt", "r") or die("Unable to open file!");
+// output until end-of-file
+while(!feof($myfile)) {
+   echo fgets($myfile) . "<br>";
+}
+fclose($myfile);
 ?>
 
-<h1>This page is realized using PHP.</h1>
+
+
+<h3>This page is realized using PHP.</h3>
 
 </body>
 </html>
