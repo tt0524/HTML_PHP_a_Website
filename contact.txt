@@ -1,5 +1,5 @@
 CMPE 272
-Sane Jose State University
-1000 S. Olive Road
-San Jose, CA 94003
-P:(123) 456-7890
+San Jose State University
+1 Washington Sq
+San Jose, CA 95192
+P: (+1) 123-456-7890
