@@ -6,7 +6,7 @@
 echo readfile("contact.txt");
 ?>
 
-<h1>titlelasdf as ldf</h1>
+<h1>This page is realized using PHP.</h1>
 
 </body>
 </html>
