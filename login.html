@@ -84,9 +84,13 @@
                     </div>
     <div class="container text-center">
         <h3>User List</h3>
-        <p> <?php
-        echo "TEST 用户名还在吗？？？？？疯了".$_SESSION['username']. "<a href='logout.php'>  Logout</a>";
-        ?> </p>
+        <p>
+            <?php
+                session_start();
+                    echo "登录成功，欢迎您".$_SESSION['username']. 
+                    "<a href='logout.php'>  Logout </a>";
+            ?>
+        </p>
     </div>                    
                 </form>
             </div>
