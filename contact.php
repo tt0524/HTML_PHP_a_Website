@@ -11,8 +11,6 @@ while(!feof($myfile)) {
 fclose($myfile);
 ?>
 
-
-
 <h3>This page is realized using PHP.</h3>
 
 </body>
