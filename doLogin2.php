@@ -1,8 +1,8 @@
 <?php
 header("Content-type:text/html;charset=UTF-8");
 // require "mysql.php";            //import mysql.php
-$_SESSION['username']=null;
-session_start();                //new session
+session_start();                   //new session
+unset($_SESSION['username']);               
 $username=$_POST['username'];
 $password=$_POST['password'];
 
@@ -16,7 +16,7 @@ $GLOBALS['MY_password'] = "12345678";
  * */
 if(checkEmpty($username,$password)){
     if(checkUser($username,$password)){
-        $_SESSION['username']=$username;            //save user name
+        $_SESSION['username']=$_POST['username'];            //save user name
         header("location: users.html ");            //if verified
     }
 }
