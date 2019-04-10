@@ -1,5 +1,6 @@
 <?php
 //log out and head to login page
+session_start();
 $_SESSION['username'] = null;
 unset($_SESSION['username']);
 session_destroy();
