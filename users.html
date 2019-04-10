@@ -62,12 +62,6 @@
                 </div>
             </div>
         </header>    <div class="page-title sp" style="background-image: url(assets/img/page-title.jpg)">
-    <div class="container text-center">
-        <h3>User List</h3>
-        <p> <?php
-        echo "TEST 登录成功，欢迎您".$_SESSION['username']. "<a href='logout.php'>  Logout</a>";
-        ?> </p>
-    </div>
 </div>        
     <div class="contact-area sp">
     <div class="container">
@@ -79,11 +73,16 @@
                         <?php
                             session_start();
                             if(isset($_SESSION['username'])){
-                                echo "登录成功，欢迎您".$_SESSION['username']. 
-                                "<a href='logout.php'>  Logout </a>";
+                                echo "Successful Login, Welcome!".$_SESSION['username']. 
+                                "<a href='logout.php'> <br> Logout </a> <br>";
+                            $myfile = fopen("users.txt", "r") or die("Unable to open file!");
+                            while(!feof($myfile)) {
+                               echo fgets($myfile) . "<br>";
+                            }
+                            fclose($myfile);
                             }
                             else
-                                {echo "你还没有登录，<a href='login.html'>请登录</a>";}
+                                {echo "You have not logged in, <a href='login.html'>please login.</a>";}
                         ?>
                     </p>
                 </div>

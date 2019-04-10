@@ -1,25 +1,25 @@
 <?php
 header("Content-type:text/html;charset=UTF-8");
-session_start();
-
+// require "mysql.php";            //import mysql.php
+session_start();                   //new session
+unset($_SESSION['username']);               
 $username=$_POST['username'];
 $password=$_POST['password'];
 
 // default username & password
 $GLOBALS['MY_username'] = "admin";
 $GLOBALS['MY_password'] = "12345678";
-
+ 
 /*
- * check if usename / password field are non-blank / valid
+ * check if null and check with database
+ * 
  * */
 if(checkEmpty($username,$password)){
-
     if(checkUser($username,$password)){
-        $_SESSION['username'] = $username;
-        accessGrant();
+        $_SESSION['username']=$username;            //save user name
+        header("location: users.html ");            //if verified
     }
 }
-
  
  
 // check username / password blank
@@ -52,12 +52,6 @@ function checkUser($username,$password){
 
 
 // print a message indicating wrong password
-function accessGrant(){
-    header("location: users.html ");
-}
-
-
-// print a message indicating wrong password
 function wrongPassword(){
     echo '<html><head><Script Language="JavaScript">alert("Yor entered an invalid password, access denied");</Script></head></html>' . 
     "<meta http-equiv=\"refresh\" content=\"0;url=login.html\">";  
@@ -74,7 +68,3 @@ function fieldBlank() {
     echo '<html><head><Script Language="JavaScript">alert("Username or Password blank!");</Script></head></html>' . 
     "<meta http-equiv=\"refresh\" content=\"0;url=login.html\">";
 }
-
-
- 
-
