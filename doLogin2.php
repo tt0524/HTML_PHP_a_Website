@@ -1,7 +1,7 @@
 <?php
 header("Content-type:text/html;charset=UTF-8");
 // require "mysql.php";            //import mysql.php
-unset($_SESSION['username']);
+$_SESSION['username']=null;
 session_start();                //new session
 $username=$_POST['username'];
 $password=$_POST['password'];
