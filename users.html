@@ -1,6 +1,5 @@
 
 <!DOCTYPE html>
-<?php session_start(); ?>
 <html lang="en">
 
 <head>
@@ -78,8 +77,10 @@
                     <h5>User Name</h5>
                     <p>
                         <?php
+                            session_start();
                             if(isset($_SESSION['username'])){
-                                echo "登录成功，欢迎您".$_SESSION['username']. "<a href='logout.php'>  Logout</a>";
+                                echo "登录成功，欢迎您".$_SESSION['username']. 
+                                "<a href='logout.php'>  Logout </a>";
                             }
                             else
                                 {echo "你还没有登录，<a href='login.html'>请登录</a>";}
