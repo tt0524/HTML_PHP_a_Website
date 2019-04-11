@@ -23,7 +23,7 @@ if(!isset($_POST['cell_phone'])){
 $first_name=$_POST['first_name'];
 $last_name=$_POST['last_name'];
 $email=$_POST['email'];
-$address=$_POST['address'];
+$address=$_POST['home_address'];
 $home_phone=$_POST['home_phone'];
 $cell_phone=$_POST['cell_phone'];
 
@@ -31,15 +31,19 @@ $cell_phone=$_POST['cell_phone'];
 
 $conn=new Mysql();
 
-$sql="INSERT INTO my_customers(first_name, last_name, email, home_address, home_phone, cell_phone) VALUES ('$first_name','$first_name','$email','$home_address',$home_phone,$cell_phone)";
+$sql="INSERT INTO my_customers(first_name, last_name, email, home_address, home_phone, cell_phone) VALUES ('$first_name','$last_name','$email','$home_address',$home_phone,$cell_phone)";
  
 // excute query
 $result=$conn->sql($sql);
 
 // # ofrows affectd
 $num=$conn->getResultNum($sql);
+echo "New User Added!\n"
 echo "rows affected: ".$num;
 echo "\n";
 
+
 //close connection to DB
 $conn->close();
+
+header("location: users.html ");
