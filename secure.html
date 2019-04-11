@@ -87,7 +87,19 @@
                                 echo "Rows Affected: ".$num;
                                 echo "\r\n</br>";
 
-                                echo "<strong> First Name &nbsp Last Name &nbsp Email &nbsp  Address &nbsp  Home Phone &nbsp Cell Phone</strong> \n";
+            echo "<table border=\"0\" cellspacing=\"0\"
+                    style=\"height: 90px; width: 223px; font-size: 10pt;\" cellpadding=\"10\">
+                    <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Home phone</th>
+                        <th>Cell phone</th>
+                    </tr>
+                    </thead>
+                    <tbody>";
                                 //output
                                 while ($row = mysqli_fetch_assoc($result))
                                 {
