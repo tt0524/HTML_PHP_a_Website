@@ -1,6 +1,7 @@
 <?php
-require_once 'functions.php';
-//首先进行非空排错
+require_once "mysql.php";
+
+// Check Empty
 if(!isset($_POST['first_name'])){
     die('first_name is not define');
 }
@@ -27,7 +28,7 @@ $home_phone=$_POST['home_phone'];
 $cell_phone=$_POST['cell_phone'];
 
 // connect to DB
-require_once "mysql.php";
+
 $conn=new Mysql();
 
 $sql="INSERT INTO my_customers(first_name, last_name, email, address, home_phone, cell_phone) VALUES ('$first_name','$first_name','$email','$address',$home_phone,$cell_phone)";
