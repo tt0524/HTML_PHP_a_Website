@@ -2,8 +2,8 @@
 class Mysql{
          private static $host="localhost";
          private static $user="root";
-         private static $password="123456";
-         private static $dbName="test";                     //数据库名
+         private static $password="";
+         private static $dbName="my_company";               //数据库名
          private static $charset="utf8";                    //字符编码
          private static $port="3306";                       //端口号
          private  $conn=null;
