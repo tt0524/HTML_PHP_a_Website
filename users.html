@@ -75,12 +75,30 @@
                             if(isset($_SESSION['username'])){
                                 echo "Successful Login, Welcome! ".$_SESSION['username']. 
                                 "\n <a href='logout.php'> <br> Logout </a> <br>";
-                            $myfile = fopen("users.txt", "r") or die("Unable to open file!");
-                            while(!feof($myfile)) {
-                               echo fgets($myfile) . "<br>";
-                            }
-                            fclose($myfile);
-                            }
+                                require_once "mysql.php";
+                                $conn=new Mysql();
+                                $sql="select * from my_customers";
+                                 
+                                //执行查询并获取查询结果
+                                $result=$conn->sql($sql);
+                                 
+                                //输出受影响数据行数
+                                $num=$conn->getResultNum($sql);
+                                echo "rows affected：".$num;
+                                 
+                                //读取并输出记录
+                                while ($row = mysqli_fetch_assoc($result))
+                                {
+                                    echo "{$row['first_name']} ";
+                                    echo "{$row['last_name']}";
+                                    echo "{$row['email']}";
+                                    echo "{$row['home_address']}";
+                                    echo "{$row['home_phone']}";
+                                    echo "{$row['cell_phone']}";
+
+                                }
+                                 //关闭数据库
+                                $conn->close();
                             else
                                 {echo "You have not logged in, <a href='login.html'>please login.</a>";}
                         ?>
