@@ -1,37 +1,44 @@
-<?php require_once "mysql.php";?>
-<html>
-<head>
-<title>Add User</title>
-</head>
-<body>
-<h3>Add New User</h3>
-<form id="add_user" name="add_user" method="post" action="insert_user.php">
-First Name: <input type="text" name="first_name"/><br/>
-Last Name: <input type="text" name="last_name"/><br/>
-email: <input type="text" name="email"/><br/>
-home address: <input type="text" name="home_address"/><br/>
-home phone: <input type="int" name="home_phone"/><br/>
-cell phone: <input type="int" name="cell_phone"/><br/>
 <?php
-$sql="select * from dept";
-$result=mysql_query($sql,$con);
-while($rows=mysql_fetch_row($result)){
-echo "<option value=".$rows[0].">".$rows[1]."</option>";
+require_once 'functions.php';
+//首先进行非空排错
+if(!isset($_POST['first_name'])){
+    die('first_name is not define');
 }
-?>
-</select><br/>
+if(!isset($_POST['last_name'])){
+    die('age is not define');
+}
+if(!isset($_POST['email'])){
+    die('email is not define');
+}
+if(!isset($_POST['address'])){
+    die('address is not define');
+}
+if(!isset($_POST['home_phone'])){
+    die('home phone is not define');
+}
+if(!isset($_POST['cell_phone'])){
+    die('cell phone is not define');
+}
+$first_name=$_POST['first_name'];
+$last_name=$_POST['last_name'];
+$email=$_POST['email'];
+$address=$_POST['address'];
+$home_phone=$_POST['home_phone'];
+$cell_phone=$_POST['cell_phone'];
 
-用户组名：<select name="user_group">
-    <?php
-    $sql="select * from usergroup";
-    $result=mysql_query($sql,$con);
-    while($rows=mysql_fetch_row($result)){
-        echo "<option value=".$rows[0].">".$rows[1]."</option>";
-    }
-    ?>
-    </select><br/>
-    <br/>
-<input type="submit" value="Add"/>
-</form>
-</body>
-</html>
+// connect to DB
+require_once "mysql.php";
+$conn=new Mysql();
+
+$sql="INSERT INTO my_customers(first_name, last_name, email, address, home_phone, cell_phone) VALUES ('$first_name','$first_name','$email','$address',$home_phone,$cell_phone)";
+ 
+// excute query
+$result=$conn->sql($sql);
+
+// # ofrows affectd
+$num=$conn->getResultNum($sql);
+echo "rows affected: ".$num;
+echo "\n";
+
+//close connection to DB
+$conn->close();
