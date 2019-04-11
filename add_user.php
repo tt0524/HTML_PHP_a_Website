@@ -11,7 +11,7 @@ if(!isset($_POST['last_name'])){
 if(!isset($_POST['email'])){
     die('email is not define');
 }
-if(!isset($_POST['address'])){
+if(!isset($_POST['home_address'])){
     die('address is not define');
 }
 if(!isset($_POST['home_phone'])){
@@ -31,7 +31,7 @@ $cell_phone=$_POST['cell_phone'];
 
 $conn=new Mysql();
 
-$sql="INSERT INTO my_customers(first_name, last_name, email, address, home_phone, cell_phone) VALUES ('$first_name','$first_name','$email','$address',$home_phone,$cell_phone)";
+$sql="INSERT INTO my_customers(first_name, last_name, email, home_address, home_phone, cell_phone) VALUES ('$first_name','$first_name','$email','$home_address',$home_phone,$cell_phone)";
  
 // excute query
 $result=$conn->sql($sql);
