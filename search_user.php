@@ -2,30 +2,13 @@
 require_once "mysql.php";
 
 // Check Empty
-if(!isset($_POST['first_name'])){
-    die('first_name is not define');
+if(!isset($_POST['first_name']) && !isset($_POST['last_name']) 
+    && !isset($_POST['email']) && !isset($_POST['home_address'])
+    && !isset($_POST['home_phone']) && !isset($_POST['cell_phone']) ){
+    die('No Input!');
     header("location: users.html ");
 }
-if(!isset($_POST['last_name'])){
-    die('age is not define');
-    header("location: users.html ");
-}
-if(!isset($_POST['email'])){
-    die('email is not define');
-    header("location: users.html ");
-}
-if(!isset($_POST['home_address'])){
-    die('address is not define');
-    header("location: users.html ");
-}
-if(!isset($_POST['home_phone'])){
-    die('home phone is not define');
-    header("location: users.html ");
-}
-if(!isset($_POST['cell_phone'])){
-    die('cell phone is not define');
-    header("location: users.html ");
-}
+
 $first_name=$_POST['first_name'];
 $last_name=$_POST['last_name'];
 $email=$_POST['email'];

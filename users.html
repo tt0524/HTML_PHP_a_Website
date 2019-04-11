@@ -75,6 +75,16 @@
                             if(isset($_SESSION['username'])){
                                 echo "Successful Login, Welcome! ".$_SESSION['username']. 
                                 "&nbsp <a href='logout.php'> <br> Logout </a> <br>";
+
+                echo '
+                <form action="search_user.php" method="post">
+                    <label>First Name:</label><input type="text" name="first_name">
+                    <label>First Name:</label><input type="text" name="last_name">
+                    <label>Email:</label><input type="text" name="email">
+                    <label>Phone Number:</label><input type="text" name="phone">
+                    <input type="submit" value="Search">
+                </form>';
+                echo "\n";
                 echo '
                 <form action="add_user.php" method="post">
                     <label>First Name:</label><input type="text" name="first_name">
