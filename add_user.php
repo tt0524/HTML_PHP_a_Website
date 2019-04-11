@@ -38,7 +38,7 @@ $result=$conn->sql($sql);
 
 // # ofrows affectd
 $num=$conn->getResultNum($sql);
-echo "New User Added!\n"
+echo "New User Added!\n";
 echo "rows affected: ".$num;
 echo "\n";
 
