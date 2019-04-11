@@ -84,7 +84,8 @@
                                  
                                 // # ofrows affectd
                                 $num=$conn->getResultNum($sql);
-                                
+                                echo "Rows Affected: ".$num;
+                                echo "</br>"
                                 echo "<strong> First Name &nbsp Last Name &nbsp Email &nbsp  Address &nbsp  Home Phone &nbsp Cell Phone</strong> \n";
                                 //output
                                 while ($row = mysqli_fetch_assoc($result))

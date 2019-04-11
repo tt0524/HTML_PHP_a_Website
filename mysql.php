@@ -12,9 +12,9 @@ class Mysql{
              $this->conn=new mysqli(self::$host,self::$user,self::$password,self::$dbName);
              if(!$this->conn)
              {
-                   die("Connection to Database Failed! \n".$this->conn->connect_error);
+                   die("Connection to Database Failed! </br>".$this->conn->connect_error);
              }else{
-                 echo "Connect to Database! &nbsp \n";
+                 echo "Connect to Database! &nbsp </br>";
              }
              $this->conn->query("set names ".self::$charset);
          }
@@ -24,7 +24,7 @@ class Mysql{
              $res=$this->conn->query($sql);
          if(!$res)
               {
-                   echo "Database Query Failed! \n";
+                   echo "Database Query Failed! </br>";
               }
               else
               {
@@ -34,7 +34,7 @@ class Mysql{
                    }
                    else
                    {
-                        echo "0 row affected! \n";
+                        echo "0 row affected! </br>";
                    }
               }
               
