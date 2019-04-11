@@ -14,7 +14,7 @@ class Mysql{
              {
                    die("Connection to Database Failed!".$this->conn->connect_error);
              }else{
-                 echo "Connect to Database!";
+                 echo "Connect to Database! &nbsp";
              }
              $this->conn->query("set names ".self::$charset);
          }
