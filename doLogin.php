@@ -17,7 +17,7 @@ $GLOBALS['MY_password'] = "12345678";
 if(checkEmpty($username,$password)){
     if(checkUser($username,$password)){
         $_SESSION['username']=$username;            //save user name
-        header("location: users.html ");            //if verified
+        header("location: secure.html ");            //if verified
     }
 }
  
