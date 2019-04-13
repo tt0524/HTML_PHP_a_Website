@@ -20,12 +20,12 @@ if(!$first_name && !$last_name && !$email && !$home_address && !$phone ){
 // echo $phone;
 
 echo "%".$first_name."%";
-echo "select * from my_customers where first_name like \"%.$first_name.%\" ";
+echo "select * from my_customers where first_name like \"%$first_name%\" ";
 
 // connect to DB
 $conn=new Mysql();
 
-$sql="select * from my_customers where first_name like \"%.$first_name.%\"
+$sql="select * from my_customers where first_name like \"%$first_name%\"
 		";
 
  
