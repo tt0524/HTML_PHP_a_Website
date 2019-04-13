@@ -19,6 +19,8 @@ if(!$first_name && !$last_name && !$email && !$home_address && !$phone ){
 // echo $home_address;
 // echo $phone;
 
+echo "%".$first_name."%";
+
 // connect to DB
 $conn=new Mysql();
 
