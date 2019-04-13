@@ -63,7 +63,7 @@
             </div>
         </header>    <div class="page-title sp" style="background-image: url(assets/img/page-title.jpg)">
 </div>        
-    <div class="contact-area sp">
+    <div class="slide-content">
     <div class="container">
         <div class="row">
             <div class="col-md-5 contact-info">
@@ -71,10 +71,6 @@
                     <h5>User Name</h5>
                     <p>
                         <?php
-                            session_start();
-                            if(isset($_SESSION['username'])){
-                                echo "Successful Login, Welcome! ".$_SESSION['username']. 
-                                "&nbsp <a href='logout.php'> <br> Logout </a> <br>";
 
         echo '
         <form action="search_user.php" method="post">
@@ -95,9 +91,6 @@
             <label>Cell Phone:</label><input type="text" name="cell_phone"><br/>
             <input type="submit" value="Submit">
         </form>';
-                            }
-                            else
-                                {echo "You have not logged in, <a href='login.html'>please login.</a>";}
                         ?>
                     </p>
                 </div>
