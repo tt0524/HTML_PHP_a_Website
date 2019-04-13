@@ -13,11 +13,11 @@ if(!$first_name && !$last_name && !$email && !$home_address && !$phone ){
 	die();
 }
 
-echo '$first_name';
-echo '$last_name';
-echo '$email';
-echo '$home_address';
-echo '$phone';
+echo $first_name;
+echo $last_name;
+echo $email;
+echo $home_address;
+echo $phone;
 
 // connect to DB
 $conn=new Mysql();
