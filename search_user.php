@@ -13,16 +13,18 @@ if(!$first_name && !$last_name && !$email && !$home_address && !$phone ){
 	die();
 }
 
-echo $first_name;
-echo $last_name;
-echo $email;
-echo $home_address;
-echo $phone;
+// echo $first_name;
+// echo $last_name;
+// echo $email;
+// echo $home_address;
+// echo $phone;
 
 // connect to DB
 $conn=new Mysql();
 
-$sql="select * from my_customers limit 5";
+$sql="select * from my_customers
+	where first_name like '"%".$first_name."%"'
+	";
 
  
 // excute query
