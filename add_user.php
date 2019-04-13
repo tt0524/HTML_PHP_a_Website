@@ -46,5 +46,6 @@ $result=$conn->sql($sql);
 $num=$conn->getResultNum($sql);
 //close connection to DB
 $conn->close();
-die('New User Added');
-header("location: users.html ");
+// successfully added
+echo '<html><head><Script Language="JavaScript">alert("New User Added!");</Script></head></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=users.html\">";
+
