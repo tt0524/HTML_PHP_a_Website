@@ -19,7 +19,7 @@ $phone=$_POST['phone'];
 // connect to DB
 $conn=new Mysql();
 
-$sql="SELECT * FROM my_customer WHERE
+$sql="SELECT * FROM my_customers WHERE
 		first_name = $first_name";
 
  
