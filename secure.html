@@ -66,65 +66,62 @@
             </div>
         </header>    <div class="page-title sp" style="background-image: url(assets/img/page-title.jpg)">
 </div>        
-    <div class="container">
-                    <h5>SECURE SECTION</h5>
-                        <?php
-                            session_start();
-                            if(isset($_SESSION['username'])){
-                                echo "Successful Login, Welcome! ".$_SESSION['username']. 
-                                "\n <a href='logout.php'> </br> <strong>Click to Logout </strong></a> </br>";
-                                require_once "mysql.php";
-                                $conn=new Mysql();
-                                $sql="select * from my_customers limit 5";
-                                 
-                                // excute query
-                                $result=$conn->sql($sql);
-                                 
-                                // # ofrows affectd
-                                $num=$conn->getResultNum($sql);
-                                echo "Rows Affected: ".$num;
-                                echo "\r\n</br>";
+<div class="container">
+<h5>SECURE SECTION</h5>
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+    echo "Successful Login, Welcome! ".$_SESSION['username']. 
+    "<a href='logout.php'> </br> <strong> &nbsp &nbsp &nbsp  Click to Logout </strong></a> </br>";
+    require_once "mysql.php";
+    $conn=new Mysql();
+    $sql="select * from my_customers limit 5";
 
-            echo "<table border=\"0\" cellspacing=\"0\"
-                    style=\"height: 90px; width: 223px; font-size: 10pt;\" cellpadding=\"10\">
-                    <thead>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Home phone</th>
-                        <th>Cell phone</th>
-                    </tr>
-                    </thead>
-                    <tbody>";
+    // excute query
+    $result=$conn->sql($sql);
+     
+    // # of rows affectd
+    $num=$conn->getResultNum($sql);
+    echo "Rows Affected: ".$num;
+    echo "\r\n</br>";
+
+    echo "<table border=\"0\" cellspacing=\"0\"
+            style=\"height: 90px; width: 223px; font-size: 10pt;\" cellpadding=\"10\">
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Home phone</th>
+                <th>Cell phone</th>
+            </tr>
+            </thead>
+            <tbody>";
                                 
-            while ($row = mysqli_fetch_assoc($result))
-            {
-                echo "{$row['first_name']} &nbsp";
-                echo "{$row['last_name']} &nbsp";
-                echo "{$row['email']} &nbsp";
-                echo "{$row['home_address']} &nbsp";
-                echo "{$row['home_phone']} &nbsp";
-                echo "{$row['cell_phone']}";
-                echo "</br>";
+<!--     while ($row = mysqli_fetch_assoc($result))
+    {
+        echo "{$row['first_name']} &nbsp";
+        echo "{$row['last_name']} &nbsp";
+        echo "{$row['email']} &nbsp";
+        echo "{$row['home_address']} &nbsp";
+        echo "{$row['home_phone']} &nbsp";
+        echo "{$row['cell_phone']}";
+        echo "</br>";
 
-            }
+    } -->
 
-            /** Fetch each record in result set */
-            for ($counter = 0; $row = mysqli_fetch_row($result); $counter++) {
-
-                echo "<tr>";
-
-                foreach ($row as $key => $value) {
-                    echo "<td>$value</td>";
-                }
-
-                echo "<tr><br>";
-            }
-            echo "</tbody></table>";
-             //close connection to DB
-            $conn->close();
+    /** Fetch each record in result set */
+    for ($counter = 0; $row = mysqli_fetch_row($result); $counter++) {
+        echo "<tr>";
+        foreach ($row as $key => $value) {
+            echo "<td>$value</td>";
+        }
+        echo "<tr><br>";
+    }
+    echo "</tbody></table>";
+     //close connection to DB
+    $conn->close();
         }
                 else
                     {echo "You have not logged in, <a href='login.html'>please login.</a>";}
