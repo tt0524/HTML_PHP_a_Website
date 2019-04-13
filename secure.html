@@ -90,12 +90,12 @@ if(isset($_SESSION['username'])){
             <thead>
             <tr>
                 <th style=\"width: 80px;\">ID</th>
-                <th style=\"width: 150px;\">First Name</th>
-                <th style=\"width: 150px;\">Last Name</th>
-                <th style=\"width: 300px;\">Email</th>
-                <th style=\"width: 300px;\">Address</th>
-                <th style=\"width: 300px;\">Home phone</th>
-                <th style=\"width: 300px;\">Cell phone</th>
+                <th style=\"width: 120px;\">First Name</th>
+                <th style=\"width: 120px;\">Last Name</th>
+                <th style=\"width: 220px;\">Email</th>
+                <th style=\"width: 220px;\">Address</th>
+                <th style=\"width: 220px;\">Home phone</th>
+                <th style=\"width: 220px;\">Cell phone</th>
             </tr>
             </thead>
             <tbody>";
@@ -112,9 +112,9 @@ if(isset($_SESSION['username'])){
      //close connection to DB
     $conn->close();
         }
-                else
-                    {echo "You have not logged in, <a href='login.html'>please login.</a>";}
-                        ?>
+else
+    {echo "You have not logged in, <a href='login.html'>please login.</a>";}
+        ?>
 </div>
 <footer>
     <div class="footer-top">
