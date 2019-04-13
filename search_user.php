@@ -12,9 +12,9 @@ if(!isset($_POST['first_name']) && !isset($_POST['last_name'])
 $first_name=$_POST['first_name'];
 $last_name=$_POST['last_name'];
 $email=$_POST['email'];
-$address=$_POST['home_address'];
-$home_phone=$_POST['home_phone'];
-$cell_phone=$_POST['cell_phone'];
+$home_address=$_POST['home_address'];
+$phone=$_POST['phone'];
+
 
 // connect to DB
 
@@ -24,8 +24,9 @@ $sql="SELECT * FROM my_customer WHERE
 			first_name  like ' %" . $first_name . "%'
 		and last_name  like ' %" . $last_name . "%'
 		and email  like ' %" . $email . "%'
-		and home_phone  like ' %" . $home_phone . "%'
-		and cell_phone  like ' %" . $cell_phone . "%'
+		and home_address  like ' %" . $home_address . "%'
+		and (home_phone  like ' %" . $phone . "%'
+				or cell_phone  like ' %" . $phone . "%')
 	";
  
 // excute query
