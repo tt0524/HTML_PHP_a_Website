@@ -42,8 +42,6 @@ $sql="INSERT INTO my_customers(first_name, last_name, email, home_address, home_
 // excute query
 $result=$conn->sql($sql);
 
-// # ofrows affectd
-$num=$conn->getResultNum($sql);
 //close connection to DB
 $conn->close();
 // successfully added
