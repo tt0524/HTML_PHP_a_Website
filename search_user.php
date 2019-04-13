@@ -53,5 +53,6 @@ echo "</tbody></table>";
 //close connection to DB
 $conn->close();
 
-echo "Click to go back <a href='users.html'> Click to go back</a>";}
+echo "Click to go back <a href='users.html'> Click to go back</a>";
+
 
