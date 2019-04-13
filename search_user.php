@@ -1,19 +1,17 @@
 <?php
 require_once "mysql.php";
 
-// Check Empty
-if(!isset($_POST['first_name']) && !isset($_POST['last_name']) 
-    && !isset($_POST['email']) && !isset($_POST['home_address'])
-    && !isset($_POST['phone']) ){
-	echo '<html><head><Script Language="JavaScript">alert("No Input!");</Script></head></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=users.html\">";
-	die();
-}
-
 $first_name=$_POST['first_name'];
 $last_name=$_POST['last_name'];
 $email=$_POST['email'];
 $home_address=$_POST['home_address'];
 $phone=$_POST['phone'];
+
+// Check Empty
+if(!$first_name && !$last_name && !$email && !$home_address && !$phone ){
+	echo '<html><head><Script Language="JavaScript">alert("No Input!");</Script></head></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=users.html\">";
+	die();
+}
 
 echo '$first_name';
 echo '$last_name';
