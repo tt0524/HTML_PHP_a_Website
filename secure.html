@@ -99,18 +99,6 @@ if(isset($_SESSION['username'])){
             </thead>
             <tbody>";
                                 
-<!--     while ($row = mysqli_fetch_assoc($result))
-    {
-        echo "{$row['first_name']} &nbsp";
-        echo "{$row['last_name']} &nbsp";
-        echo "{$row['email']} &nbsp";
-        echo "{$row['home_address']} &nbsp";
-        echo "{$row['home_phone']} &nbsp";
-        echo "{$row['cell_phone']}";
-        echo "</br>";
-
-    } -->
-
     /** Fetch each record in result set */
     for ($counter = 0; $row = mysqli_fetch_row($result); $counter++) {
         echo "<tr>";
