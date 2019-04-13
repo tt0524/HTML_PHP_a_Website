@@ -49,3 +49,4 @@ $conn->close();
 // successfully added
 echo '<html><head><Script Language="JavaScript">alert("New User Added!");</Script></head></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=users.html\">";
 
+die();

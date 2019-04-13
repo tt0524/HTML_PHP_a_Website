@@ -4,9 +4,9 @@ require_once "mysql.php";
 // Check Empty
 if(!isset($_POST['first_name']) && !isset($_POST['last_name']) 
     && !isset($_POST['email']) && !isset($_POST['home_address'])
-    && !isset($_POST['home_phone']) && !isset($_POST['cell_phone']) ){
-    die('No Input!');
-    header("location: users.html ");
+    && !isset($_POST['phone']) ){
+	echo '<html><head><Script Language="JavaScript">alert("No Input!");</Script></head></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=users.html\">";
+	die();
 }
 
 $first_name=$_POST['first_name'];
