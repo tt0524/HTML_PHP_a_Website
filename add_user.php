@@ -28,6 +28,7 @@ if(!$address){
 if(!$home_phone){
     echo '<html><head><Script Language="JavaScript">alert("Empty Home Phone!");</Script></head></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=users.html\">";
     die();
+}
 if(!$cell_phone){
     echo '<html><head><Script Language="JavaScript">alert("Empty Cell Phone!");</Script></head></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=users.html\">";
     die();
