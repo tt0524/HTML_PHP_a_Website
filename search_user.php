@@ -30,7 +30,7 @@ $sql="select * from my_customers
 		and email like \"%$email%\"
 		and home_address like \"%$home_address%\"
 		and (home_phone like \"%$phone%\"
-			or cell_phone like \"%$phone%\"
+			or cell_phone like \"%$phone%\")
 		 ";
 
  
