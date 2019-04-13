@@ -17,17 +17,11 @@ $phone=$_POST['phone'];
 
 
 // connect to DB
-
 $conn=new Mysql();
 
 $sql="SELECT * FROM my_customer WHERE
-			first_name  like ' %" . $first_name . "%'
-		and last_name  like ' %" . $last_name . "%'
-		and email  like ' %" . $email . "%'
-		and home_address  like ' %" . $home_address . "%'
-		and (home_phone  like ' %" . $phone . "%'
-				or cell_phone  like ' %" . $phone . "%')
-	";
+		first_name = $first_name";
+
  
 // excute query
 $result=$conn->sql($sql);
