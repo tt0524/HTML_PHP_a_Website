@@ -19,8 +19,7 @@ $phone=$_POST['phone'];
 // connect to DB
 $conn=new Mysql();
 
-$sql="SELECT * FROM my_customers WHERE
-		first_name = $first_name";
+$sql="select * from my_customers limit 5";
 
  
 // excute query
