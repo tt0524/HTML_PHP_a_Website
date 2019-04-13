@@ -25,6 +25,10 @@ $sql="select * from my_customers limit 5";
 // excute query
 $result=$conn->sql($sql);
 
+// # of rows affectd
+$num=$conn->getResultNum($sql);
+echo "Rows Affected: ".$num;
+
 echo "<table border=\"1\" cellspacing=\"0\"
         style=\"height: 90px; font-size: 10pt;\" cellpadding=\"10\">
         <thead>
@@ -53,6 +57,6 @@ echo "</tbody></table>";
 //close connection to DB
 $conn->close();
 
-echo "Click to go back <a href='users.html'> Click to go back</a>";
+echo "<a href='users.html'> <strong> Click to go back </strong></a>";
 
 
