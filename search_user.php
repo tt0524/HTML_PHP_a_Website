@@ -15,6 +15,11 @@ $email=$_POST['email'];
 $home_address=$_POST['home_address'];
 $phone=$_POST['phone'];
 
+echo '$first_name';
+echo '$last_name';
+echo '$email';
+echo '$home_address';
+echo '$phone';
 
 // connect to DB
 $conn=new Mysql();
