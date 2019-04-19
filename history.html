@@ -81,7 +81,7 @@
         <ul>
             <?php 
             $his = explode('|',$_COOKIE['history']);
-            echo array_values($his);
+            var_dump($his);
             foreach ($his as $v) { ?>
             <li> <?php echo $v; ?></li> 
             <?php }; 
