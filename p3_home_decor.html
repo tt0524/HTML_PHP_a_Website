@@ -7,7 +7,7 @@ if (!isset($_COOKIE['history'])) {           // if no product history
  } else {                                    // if product history not empty
     $his = explode('|',$_COOKIE['history']);  // explode
     $hist[] = $uri;                           // store
-    $his = array_unique($his);
+    $his = array_unique($his, $sort_flags = SORT_STRING);
     array_unshift($his, $uri);
     if (count($his) > 10) {             // store 10 url
         array_pop($his);
