@@ -6,16 +6,18 @@ if (!isset($_COOKIE['history'])) {           // if no product history
     $his[] = $uri;                           // just store product uri
  } else {                                    // if product history not empty
     $his = explode('|',$_COOKIE['history']);  // explode
-    $hist[] = $uri;                           // store
-    $his = array_unique($his, $sort_flags = SORT_STRING);
-    array_unshift($his, $uri);
-    if (count($his) > 10) {             // store 10 url
-        array_pop($his);
+    if (in_array($uri, $his)){
+        $pos = array_search($uri, $his);
+        $new_his = array_merge(array_slice($his, 0, $pos), array_slice($his, $pos));
+    }
+    array_unshift($new_his, $uri);
+    if (count($new_his) > 10) {             // store 10 url
+        array_pop($new_his);
     }
  }
 
 $expire=time()+60*60*24*30;
-setcookie('history',implode('|', $his),$expire);
+setcookie('history',implode('|', $new_his),$expire);
 
 ?>
 
