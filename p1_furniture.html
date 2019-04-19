@@ -2,14 +2,14 @@
 $uri = $_SERVER['REQUEST_URI'];  
 $id = isset($_GET['id'])?$_GET['id']:0;
  
-    if (!isset($_COOKIE['history'])) {           // if click product first
-        $his[] = $uri;                           // store uri             
-     } else {                                    // if visited before
+    if (!isset($_COOKIE['history'])) {           // if no product history
+        $his[] = $uri;                           // just store product uri
+     } else {                                    // if product history not empty
         $his = explode('|',$_COOKIE['history']);  // explode
-        $his[] = $uri;                            // store
-        $his = array_unique($his);         // remove dupliacted
-        array_unshift($his, $uri);        
-     
+        if in_array($uri, $his){
+            unset($his[$uri]);
+        }
+        $his[] = $uri;                            // store        
         if (count($his) > 10) {             // store 10 url
             array_pop($his);
         }
