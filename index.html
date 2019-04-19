@@ -1,3 +1,24 @@
+<?php
+$uri = $_SERVER['REQUEST_URI'];  
+$id = isset($_GET['id'])?$_GET['id']:0;
+ 
+if (!isset($_COOKIE['history'])) {           // if first time
+    $his[] = $uri;                           // store uri             
+ } else {                                    // if visited before
+    $his = explode('|',$_COOKIE['history']);  // explode
+    $his[] = $uri;                            // store
+    $his = array_unique($his);         // remove dupliacted
+    array_unshift($his, $uri);         // shift
+ 
+    if (count($his) >10) {             // store 10 url
+        array_pop($his);
+    }
+ }
+
+$expire=time()+60*60*24*30;
+setcookie('history',implode('|', $his),$expire);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,6 +83,7 @@
                                         <li><a href="p8_storage.html">Storage</a></li>
                                         <li><a href="p9_kids.html">Kids</a></li>
                                         <li><a href="p10_pets.html">Pets</a></li>
+                                        <li><a href="history.html">Recently Viewed</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="contact.html">Contact</a></li>
