@@ -81,8 +81,10 @@
         <ul>
             <?php 
             $my_cookie = $_COOKIE['history'];
+            $his = explode('|',$my_cookie);
+            echo array_values($his);
             foreach (var_dump($my_cookie) as $v) { ?>
-            <li> <?php echo $v; ?></li>   
+            <li> <?php echo $v; ?></li> 
             <?php }; 
             ?>
         </ul>
