@@ -2,7 +2,7 @@
 $uri = $_SERVER['REQUEST_URI'];  
 $id = isset($_GET['id'])?$_GET['id']:0;
  
-if ( preg_match("/p[0-9]+", $uri) ){ 
+if ( preg_match("\/p\d+_\w+.html", $uri) ){ 
     if (!isset($_COOKIE['history'])) {           // if click product first
         $his[] = $uri;                           // store uri             
      } else {                                    // if visited before
