@@ -8,13 +8,16 @@ if (!isset($_COOKIE['history'])) {           // if no product history
  } else {                                    // if product history not empty
     $his = explode('|',$_COOKIE['history']);  // explode
     if (in_array($uri, $his)){
+        echo "DUPLICATE!!!!";
         $pos = array_search($uri, $his);
         echo $pos;
-        $new_his = array_merge(array_slice($his, 0, $pos), array_slice($his, $pos));
-        print_r(array_slice($his, 0, $pos));
-        print_r(array_slice($his, $pos));
+        $new_his = array_merge(array_slice($his, 0, $pos-1), array_slice($his, $pos+1));
+        echo "   first part";
+        print_r(array_slice($his, 0, $pos-1));
+        echo "   second part";
+        print_r(array_slice($his, $pos+1));
         $his = $new_his;
-        echo "YES!!";
+        
     }
     array_unshift($his, $uri);
     if (count($his) > 10) {             // store 10 url
