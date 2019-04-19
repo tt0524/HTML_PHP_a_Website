@@ -80,9 +80,11 @@
         </div>
         <ul>
             <?php 
-            foreach ($his as $v) { ?>
-            <li><?php echo $v;?></li>   
-            <?php }; ?>
+            $my_cookie = $_COOKIE['history'];
+            foreach (var_dump($my_cookie) as $v) { ?>
+            <li> <?php echo $v; ?></li>   
+            <?php }; 
+            ?>
         </ul>
         <div class="row">
             <div class="col-12 text-center" data-margin="40px 0 0">
