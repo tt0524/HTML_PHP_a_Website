@@ -1,5 +1,5 @@
 <?php
-$uri = $_SERVER['REQUEST_URI'];
+$uri = (string)$_SERVER['REQUEST_URI'];
 echo $uri;
 $id = isset($_GET['id'])?$_GET['id']:0;
  
@@ -9,6 +9,7 @@ if (!isset($_COOKIE['history'])) {           // if no product history
     $his = explode('|',$_COOKIE['history']);  // explode
     if (in_array($uri, $his)){
         $pos = array_search($uri, $his);
+        echo $pos;
         $new_his = array_merge(array_slice($his, 0, $pos), array_slice($his, $pos));
         print_r(array_slice($his, 0, $pos));
         print_r(array_slice($his, $pos));
