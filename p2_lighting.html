@@ -6,10 +6,10 @@ $id = isset($_GET['id'])?$_GET['id']:0;
         $his[] = $uri;                           // just store product uri
      } else {                                    // if product history not empty
         $his = explode('|',$_COOKIE['history']);  // explode
-        if(in_array($uri, $his)){
-            unset($his[$uri]);
+        if (in_array($uri, $his) ){
+            array_slice($his,array_search($uri, $his),1);
         }
-        $his[] = $uri;                            // store        
+        array_unshift($his,$uri);                            // store        
         if (count($his) > 10) {             // store 10 url
             array_pop($his);
         }
@@ -83,6 +83,7 @@ setcookie('history',implode('|', $his),$expire);
                                         <li><a href="p8_storage.html">Storage</a></li>
                                         <li><a href="p9_kids.html">Kids</a></li>
                                         <li><a href="p10_pets.html">Pets</a></li>
+                                        <li><a href="history.html">Recently Viewed</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="contact.html">Contact</a></li>
