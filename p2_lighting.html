@@ -1,3 +1,24 @@
+<?php
+$uri = $_SERVER['REQUEST_URI'];  
+$id = isset($_GET['id'])?$_GET['id']:0;
+ 
+    if (!isset($_COOKIE['history'])) {           // if click product first
+        $his[] = $uri;                           // store uri             
+     } else {                                    // if visited before
+        $his = explode('|',$_COOKIE['history']);  // explode
+        $his[] = $uri;                            // store
+        $his = array_unique($his);         // remove dupliacted
+        array_unshift($his, $uri);        
+     
+        if (count($his) > 10) {             // store 10 url
+            array_pop($his);
+        }
+     }
+
+$expire=time()+60*60*24*30;
+setcookie('history',implode('|', $his),$expire);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -151,7 +172,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="copyright-txt">
-                        Copyright &copy; 2019. Xiaoting Jin All rights reserved.
+                        All images are from website, only for my course assignment non-business use. 
                     </div>
                 </div>
                 <div class="col-lg-6 text-right">
