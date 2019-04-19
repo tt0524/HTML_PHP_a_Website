@@ -2,7 +2,6 @@
 $uri = $_SERVER['REQUEST_URI'];  
 $id = isset($_GET['id'])?$_GET['id']:0;
  
-if ( preg_match("p\d+_\w+.html", $uri) ){ 
     if (!isset($_COOKIE['history'])) {           // if click product first
         $his[] = $uri;                           // store uri             
      } else {                                    // if visited before
@@ -11,11 +10,10 @@ if ( preg_match("p\d+_\w+.html", $uri) ){
         $his = array_unique($his);         // remove dupliacted
         array_unshift($his, $uri);        
      
-        if (count($his) > 7) {             // store 10 url
+        if (count($his) > 10) {             // store 10 url
             array_pop($his);
         }
      }
-}
 
 $expire=time()+60*60*24*30;
 setcookie('history',implode('|', $his),$expire);
