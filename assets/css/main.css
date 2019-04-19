@@ -1268,17 +1268,3 @@ footer {
 
 /*# sourceMappingURL=main.css.map */
 
-
-/*****************************
- *   14. secure-area
- ***************************** */
-.secure-area {
-  background-color: #dadada;
-  border-radius: 5px;
-  padding: 70px 100px;
-  color: #fff;
-  margin-left: 100px;
-  margin-right: 100px;
-  h5 {text-align:center;}
-   }
-
