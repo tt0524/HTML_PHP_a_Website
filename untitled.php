@@ -1,5 +1,6 @@
 <?php
-$uri = $_SERVER['REQUEST_URI'];  
+$uri = $_SERVER['REQUEST_URI'];
+echo $uri;
 $id = isset($_GET['id'])?$_GET['id']:0;
  
 if (!isset($_COOKIE['history'])) {           // if no product history
