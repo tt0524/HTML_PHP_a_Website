@@ -10,6 +10,8 @@ if (!isset($_COOKIE['history'])) {           // if no product history
     if (in_array($uri, $his)){
         $pos = array_search($uri, $his);
         $new_his = array_merge(array_slice($his, 0, $pos), array_slice($his, $pos));
+        print_r(array_slice($his, 0, $pos));
+        print_r(array_slice($his, $pos));
         $his = $new_his;
         echo "YES!!";
     }

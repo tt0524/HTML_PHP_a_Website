@@ -1,6 +1,7 @@
 <?php
-$uri = $_SERVER['REQUEST_URI'];  
-$id = isset($_GET['id'])?$_GET['id']:0;
+$uri = $_SERVER['REQUEST_URI'];
+echo $uri;
+
  
 if (!isset($_COOKIE['history'])) {           // if no product history
     $his[] = $uri;                           // just store product uri
@@ -10,6 +11,7 @@ if (!isset($_COOKIE['history'])) {           // if no product history
         $pos = array_search($uri, $his);
         $new_his = array_merge(array_slice($his, 0, $pos), array_slice($his, $pos));
         $his = $new_his;
+        echo "YES!!";
     }
     array_unshift($his, $uri);
     if (count($his) > 10) {             // store 10 url
@@ -21,6 +23,7 @@ $expire=time()+60*60*24*30;
 setcookie('history',implode('|', $his),$expire);
 
 ?>
+
 
 
 <!DOCTYPE html>
