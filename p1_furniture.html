@@ -7,9 +7,9 @@ $id = isset($_GET['id'])?$_GET['id']:0;
      } else {                                    // if product history not empty
         $his = explode('|',$_COOKIE['history']);  // explode
         if (in_array($uri, $his) ){
-            unset($his[$uri]);
+            array_slice($his,array_search($uri, $his),1);
         }
-        $his[] = $uri;                            // store        
+        array_unshift($his,$uri);                            // store        
         if (count($his) > 10) {             // store 10 url
             array_pop($his);
         }
