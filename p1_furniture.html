@@ -2,7 +2,7 @@
 $uri = $_SERVER['REQUEST_URI'];  
 $id = isset($_GET['id'])?$_GET['id']:0;
  
-if ereg("//p.*", $uri){ 
+if ereg("/p[0-9]+", $uri){ 
     if (!isset($_COOKIE['history'])) {           // if click product first
         $his[] = $uri;                           // store uri             
      } else {                                    // if visited before
@@ -11,7 +11,7 @@ if ereg("//p.*", $uri){
         $his = array_unique($his);         // remove dupliacted
         array_unshift($his, $uri);        
      
-        if (count($his) > 5) {             // store 10 url
+        if (count($his) > 7) {             // store 10 url
             array_pop($his);
         }
      }
