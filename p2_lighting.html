@@ -6,7 +6,7 @@ $id = isset($_GET['id'])?$_GET['id']:0;
         $his[] = $uri;                           // just store product uri
      } else {                                    // if product history not empty
         $his = explode('|',$_COOKIE['history']);  // explode
-        if in_array($uri, $his){
+        if(in_array($uri, $his)){
             unset($his[$uri]);
         }
         $his[] = $uri;                            // store        
