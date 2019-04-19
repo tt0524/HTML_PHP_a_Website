@@ -9,15 +9,17 @@ if (!isset($_COOKIE['history'])) {           // if no product history
     if (in_array($uri, $his)){
         $pos = array_search($uri, $his);
         $new_his = array_merge(array_slice($his, 0, $pos), array_slice($his, $pos));
+        $his = $new_his;
+        echo "YES!!";
     }
-    array_unshift($new_his, $uri);
-    if (count($new_his) > 10) {             // store 10 url
-        array_pop($new_his);
+    array_unshift($his, $uri);
+    if (count($his) > 10) {             // store 10 url
+        array_pop($his);
     }
  }
 
 $expire=time()+60*60*24*30;
-setcookie('history',implode('|', $new_his),$expire);
+setcookie('history',implode('|', $his),$expire);
 
 ?>
 
