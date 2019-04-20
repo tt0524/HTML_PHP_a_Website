@@ -1,7 +1,6 @@
 <?php
 $uri = (string)$_SERVER['REQUEST_URI'];
 echo $uri;
-$id = isset($_GET['id'])?$_GET['id']:0;
  
 if (!isset($_COOKIE['history'])) {           // if no product history
     $his[] = $uri;                           // just store product uri
@@ -10,20 +9,19 @@ if (!isset($_COOKIE['history'])) {           // if no product history
     if (in_array($uri, $his)){
         echo "DUP";
         $pos = array_search($uri, $his);
-        echo $pos;
         if ($pos == 0){
-            echo "First ";
+            echo "Remaining ";
             print_r(array_slice($his, $pos+1));
             $new_his = array_slice($his, $pos+1);
         } else {
             print_r($his);
             echo "First ";
-            print_r(array_slice($his, 0, $pos-1));
+            print_r(array_slice($his, 0, $pos-2));
             echo "\n Second ";
-            print_r(array_slice($his, $pos+1));
-            $new_his = array_merge(array_slice($his, 0, $pos-1), array_slice($his, $pos+1));}
+            print_r(array_slice($his, $pos+2));
+            $new_his = array_merge(array_slice($his, 0, $pos-2), array_slice($his, $pos+2));
+        }
         $his = $new_his;
-        
     }
     array_unshift($his, $uri);
     if (count($his) > 10) {             // store 10 url
