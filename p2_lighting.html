@@ -11,7 +11,7 @@ if (!isset($_COOKIE['history'])) {           // if no product history
         echo "DUP";
         $pos = array_search($uri, $his);
         echo $pos;
-        if ($pos = 0){
+        if ($pos == 0){
             echo "First ";
             print_r(array_slice($his, $pos+1));
             $new_his = array_slice($his, $pos+1);
