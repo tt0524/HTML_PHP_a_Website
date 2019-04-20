@@ -16,6 +16,7 @@ if (!isset($_COOKIE['history'])) {           // if no product history
             print_r(array_slice($his, $pos+1));
             $new_his = array_slice($his, $pos+1);
         } else {
+            print_r($his);
             echo "First ";
             print_r(array_slice($his, 0, $pos-1));
             echo "\n Second ";
