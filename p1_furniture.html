@@ -12,10 +12,15 @@ if (!isset($_COOKIE['history'])) {           // if no product history
         $pos = array_search($uri, $his);
         echo $pos;
         if ($pos = 0){
+            echo "First ";
+            print_r(array_slice($his, $pos+1));
             $new_his = array_slice($his, $pos+1);
-        } else {$new_his = array_merge(array_slice($his, 0, $pos-1), array_slice($his, $pos+1));}
-        echo "   second part";
-        print_r(array_slice($his, $pos+1));
+        } else {
+            echo "First ";
+            print_r(array_slice($his, 0, $pos-1));
+            echo "\n Second ";
+            print_r(array_slice($his, $pos+1));
+            $new_his = array_merge(array_slice($his, 0, $pos-1), array_slice($his, $pos+1));}
         $his = $new_his;
         
     }
