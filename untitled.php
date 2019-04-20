@@ -25,7 +25,7 @@ if (!isset($_COOKIE['history'])) {           // if no product history
         $his = $new_his;
     }
     array_unshift($his, $uri);
-    if (count($his) > 10) {             // store 10 url
+    if (count($his) > 5) {             // store 10 url
         array_pop($his);
     }
  }
