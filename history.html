@@ -82,7 +82,8 @@
             <?php 
             $his = explode('|',$_COOKIE['history']);
             foreach ($his as $v) { ?>
-            <li> <?php echo "<a href=\"http://www.163.com\"> <?php ltrim($v, "/") ?> </a>"; ?></li> 
+            <?php $product = ltrim($v, "/"); ?>
+            <li> <?php echo "<a href=\"http://www.163.com\"> $product </a>"; ?></li> 
             <?php }; 
             ?>
         </ul>
