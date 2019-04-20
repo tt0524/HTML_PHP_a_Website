@@ -9,6 +9,7 @@ if (!isset($_COOKIE['history'])) {           // if no product history
     if (in_array($uri, $his)){
         echo "DUP";
         $pos = array_search($uri, $his);
+        echo $pos;
         if ($pos == 0){
             echo "Remaining ";
             print_r(array_slice($his, $pos+1));
@@ -16,10 +17,10 @@ if (!isset($_COOKIE['history'])) {           // if no product history
         } else {
             print_r($his);
             echo "First ";
-            print_r(array_slice($his, 0, $pos-2));
+            print_r(array_slice($his, 0, $pos-1));
             echo "\n Second ";
-            print_r(array_slice($his, $pos+2));
-            $new_his = array_merge(array_slice($his, 0, $pos-2), array_slice($his, $pos+2));
+            print_r(array_slice($his, $pos+1));
+            $new_his = array_merge(array_slice($his, 0, $pos-1), array_slice($his, $pos+1));
         }
         $his = $new_his;
     }
