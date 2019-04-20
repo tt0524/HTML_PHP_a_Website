@@ -86,9 +86,9 @@
                   $p_name_0 = rtrim($p_page, ".html");
                   echo $p_name_0;
                   $i = stripos($p_name_0, "_");
-                  $p_name_1 = substr($p_name_0, $i+1);
+                  $p_name_1 = substr($p_name_0, ($i+1) );
                   echo $p_name_1;
-                  $p_name_2 = ucwords(str_replace($p_name_1, "_", " "));
+                  $p_name_2 = ucwords(str_replace($p_name_1, "_", "\s"));
                   echo $p_name_2;
             ?>
             <li> <?php echo "<a href=\"$p_page\"> $p_name_2 </a>"; ?></li> 
