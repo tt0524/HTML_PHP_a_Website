@@ -26,72 +26,25 @@ setcookie('history',implode('|', $his),$expire);
  if (!isset($_COOKIE['view_count'])) {           // if no product history
     $view_count = array($uri => 1);
     $prod = array_keys($view_count);
-    echo "prod";
-    print_r($prod);
-    echo "</br>";
     $count = array_values($view_count);
-    echo "count";
     $view_count = cross_merge_array($prod, $count);
-    print_r($count);
-    echo "</br>";
-    print_r ("view_count ");
-    print_r($view_count);              // just store product uri
-    echo "</br>";
     $test = implode('|', $view_count);
-    print_r ("After Implode ");
-    print_r($test);
-    echo "</br>";
  } else {
-    print_r($_COOKIE['view_count']);
     $temp = explode('|',$_COOKIE['view_count']);
-    print_r( "temp  ");
-    print_r($temp);
-    echo "</br>";
     $prod = array_values(array_filter($temp, "even",ARRAY_FILTER_USE_KEY));
-    print_r( "prod  ");
-    print_r($prod);
-    echo "</br>";
     $count = array_values(array_filter($temp, "odd",ARRAY_FILTER_USE_KEY));
-    print_r("count  ");
-    print_r($count);
-    echo "</br>";
     if ( array_search($uri, $prod) !== FALSE ){
         $pos = array_search($uri, $prod);
-        print_r($pos);
-        print_r("***FOUND***");
         $count[$pos] += 1;
     } else {
-        print_r("****NOT FOUND****");
         array_push($prod, $uri);
         array_push($count, 1);
     }
     $view_count = cross_merge_array($prod, $count);
  }
 
-print_r( "prod  ");
-print_r($prod);
-echo "</br>";
-print_r("count  ");
-print_r($count);
-echo "</br>";
-print_r("view_count  ");
-print_r($view_count);
-
 setcookie('view_count',implode('|', $view_count),$expire);
 
-echo "</br>";
-print_r("/////TEST SECTION***");
-print_r("URI**");
-print_r($uri);
-print_r("prod**");
-print_r($prod);
-print_r("exist**");
-print_r(array_key_exists($uri, $prod));
-print_r("search**");
-print_r(array_search($uri, $prod));
-print_r("ISSET****");
-print_r(isset($prod[$uri]));
-echo "</br>";
 
 function odd($var)
 {
