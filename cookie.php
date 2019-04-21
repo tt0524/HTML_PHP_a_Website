@@ -48,8 +48,6 @@ setcookie('history',implode('|', $his),$expire);
     $count = array_values(array_filter($temp, "odd",ARRAY_FILTER_USE_KEY));
     print_r("count  ");
     print_r($count);
-    print_r($uri);
-    print_r(array_search($uri, $prod));
     if ( array_key_exists($uri, $prod) ){
         $pos = array_search($uri, $prod);
         print_r($pos);
@@ -67,10 +65,14 @@ setcookie('history',implode('|', $his),$expire);
 
 
 print_r("/////TEST SECTION***");
-$test_array = array(1,1,2,3);
-print_r(array_values($test_array));
-setcookie('view_count',implode('|', $view_count),$expire);
-
+print_r("URI**");
+print_r($uri);
+print_r("prod**");
+print_r($prod);
+print_r("exist**");
+print_r(array_key_exists($uri, $prod));
+print_r("search**");
+print_r(array_search($uri, $prod));
 
 
 function odd($var)
