@@ -3,10 +3,18 @@
 if ( isset($_COOKIE['view_count']) ) {
     $temp = explode('|',$_COOKIE['view_count']);
     $prod = array_values(array_filter($temp, "even",ARRAY_FILTER_USE_KEY));
+    print_r($prod);
+    echo "</br>";
     $count = array_values(array_filter($temp, "odd",ARRAY_FILTER_USE_KEY));
+    print_r($count);
+    echo "</br>";
     $view_count = cross_merge_array($prod, $count);
-    arsort($view_count);
     print_r($view_count);
+    echo "</br>";
+    arsort($view_count);
+    echo "</br>";
+    print_r($view_count);
+    echo "</br>";
     $view_count_5 = array_slice($view_count, 0, 5);
     print_r($view_count_5);
 }
