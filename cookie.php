@@ -66,12 +66,20 @@ setcookie('history',implode('|', $his),$expire);
         array_push($count, 1);
     }
     $view_count = cross_merge_array($prod, $count);
-    print_r("view_count  ");
-    print_r($view_count);
  }
+
+print_r( "prod  ");
+print_r($prod);
+echo "</br>";
+print_r("count  ");
+print_r($count);
+echo "</br>";
+print_r("view_count  ");
+print_r($view_count);
 
 setcookie('view_count',implode('|', $view_count),$expire);
 
+echo "</br>";
 print_r("/////TEST SECTION***");
 print_r("URI**");
 print_r($uri);
