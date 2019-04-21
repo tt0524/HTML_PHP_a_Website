@@ -41,6 +41,17 @@ setcookie('history',implode('|', $his),$expire);
 
 setcookie('view_count',implode('|', $view_count),$expire);
 
+function odd($var)
+{
+    return($var & 1);
+}
+
+function even($var)
+{
+
+    return(!($var & 1));
+}
+
 function cross_merge_array($arr1, $arr2)
     {
         $arr1 = array_values($arr1);
