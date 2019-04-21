@@ -63,6 +63,7 @@ setcookie('history',implode('|', $his),$expire);
     print_r($view_count);
  }
 
+setcookie('view_count',implode('|', $view_count),$expire);
 
 print_r("/////TEST SECTION***");
 print_r("URI**");
