@@ -97,11 +97,18 @@
         <div class="section-title">
             <h2>Top 5 Popular Products</h2>
         </div>
-            <?php 
-            $his = explode('|',$_COOKIE['history']);
-            $view_count = explode('|',$_COOKIE['view_count']);
-            print_r($view_count);
-            ?>
+        <?php include 'most_popular.php';?>
+         <?php
+        foreach ($view_count_5 as $k => $v) { ?>
+        <?php $p_page = ltrim($k, "/"); 
+              $p_name_0 = rtrim($p_page, ".html");
+              $i = stripos($p_name_0, "_");
+              $p_name_1 = substr($p_name_0, ($i+1) );
+              $p_name_2 = ucwords(str_replace("_", " ", $p_name_1));
+        ?>
+        <li> <?php echo "<a href=\"$p_page\"> $p_name_2 </a>"; ?></li> 
+        <?php }; 
+        ?>       
     </div>
 </div><div class="faq-area sp bg2">
 </div><footer>
