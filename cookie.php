@@ -50,6 +50,13 @@ setcookie('history',implode('|', $his),$expire);
 
 setcookie('view_count',implode('|', $view_count),$expire);
 
+$test_array = array('p1_furniture' => 1);
+$prod = array_keys($view_count);
+$count = array_values($view_count);
+$view_count = cross_merge_array($prod, $count);
+$test = implode('|', $view_count);
+echo $test;
+
 function odd($var)
 {
     return($var & 1);
