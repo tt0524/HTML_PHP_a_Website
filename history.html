@@ -82,6 +82,7 @@
             <?php 
             $his = explode('|',$_COOKIE['history']);
             $view_count = explode('|',$_COOKIE['view_count']);
+            print_r($view_count);
             foreach ($his as $v) { ?>
             <?php $p_page = ltrim($v, "/"); 
                   $p_name_0 = rtrim($p_page, ".html");
