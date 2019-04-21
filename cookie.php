@@ -24,15 +24,21 @@ $expire=time()+60*60*24*30;
 setcookie('history',implode('|', $his),$expire);
 
  if (!isset($_COOKIE['view_count'])) {           // if no product history
-    $view_count = array($uri => 1);              // just store product uri
+    $view_count = array($uri => 1);
+    print_r($view_count);              // just store product uri
  } else {
     $temp = explode('|',$_COOKIE['view_count']);
+    print_r($temp);
     $prod = array_filter($temp, "even",ARRAY_FILTER_USE_KEY);
+    print_r($prod);
     $count = array_filter($temp, "odd",ARRAY_FILTER_USE_KEY);
+    print_r($count);
     $pos = array_search($uri, $prod);
     $count[$pos] += 1;
     $view_count = cross_merge_array($prod, $count);
+    print_r($view_count);
  }
+
 setcookie('view_count',implode('|', $view_count),$expire);
 
 function cross_merge_array($arr1, $arr2)
