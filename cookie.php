@@ -52,6 +52,7 @@ setcookie('history',implode('|', $his),$expire);
         print_r($pos);
         $count[$pos] = $count[$pos] + 1;
     } else {
+        print_r("****NOT FOUND****");
         array_push($prod, $uri);
         array_push($count, 1);
     }
