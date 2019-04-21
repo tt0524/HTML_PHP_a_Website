@@ -47,7 +47,7 @@ setcookie('history',implode('|', $his),$expire);
     print_r( "temp  ");
     print_r($temp);
     echo "</br>";
-    $prod = array_filter($temp, "even",ARRAY_FILTER_USE_KEY);
+    $prod = array_values(array_filter($temp, "even",ARRAY_FILTER_USE_KEY));
     print_r( "prod  ");
     print_r($prod);
     echo "</br>";
