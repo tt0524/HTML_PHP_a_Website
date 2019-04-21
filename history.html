@@ -76,7 +76,7 @@
         </header><div class="portfolio-area sp">
     <div class="container">
         <div class="section-title">
-            <h2>Recently Viewed</h2>
+            <h2>Recently Viewed Products</h2>
         </div>
         <ul>
             <?php 
@@ -94,11 +94,16 @@
             <?php }; 
             ?>
         </ul>
-        <div class="row">
-            <div class="col-12 text-center" data-margin="40px 0 0">
-                <a href="#" class="button">More Products</a>
-            </div>
+    </div>
+    <div class="container">
+        <div class="section-title">
+            <h2>Top 5 Popular Products</h2>
         </div>
+            <?php 
+            $his = explode('|',$_COOKIE['history']);
+            $view_count = explode('|',$_COOKIE['view_count']);
+            print_r($view_count);
+            ?>
     </div>
 </div><div class="faq-area sp bg2">
 </div><footer>
