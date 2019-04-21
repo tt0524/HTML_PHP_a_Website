@@ -50,15 +50,15 @@ setcookie('history',implode('|', $his),$expire);
     print_r($count);
     print_r($uri);
     print_r(array_search($uri, $prod));
-    if ( array_search($uri, $prod) >= 0 ){
+    if ( is_null(array_search($uri, $prod) ){
+        print_r("****NOT FOUND****");
+        array_push($prod, $uri);
+        array_push($count, 1);    
+    } else {
         $pos = array_search($uri, $prod);
         print_r($pos);
         print_r("***FOUND***");
         $count[$pos] += 1;
-    } else {
-        print_r("****NOT FOUND****");
-        array_push($prod, $uri);
-        array_push($count, 1);
     }
     $view_count = cross_merge_array($prod, $count);
     print_r("view_count  ");
