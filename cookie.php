@@ -50,7 +50,7 @@ setcookie('history',implode('|', $his),$expire);
     print_r($count);
     print_r($uri);
     print_r(array_search($uri, $prod));
-    if ( is_null(array_search($uri, $prod) ){
+    if ( is_null(array_search($uri, $prod)) ){
         print_r("****NOT FOUND****");
         array_push($prod, $uri);
         array_push($count, 1);    
