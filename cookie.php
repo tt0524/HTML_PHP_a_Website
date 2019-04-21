@@ -48,8 +48,10 @@ setcookie('history',implode('|', $his),$expire);
     $count = array_values(array_filter($temp, "odd",ARRAY_FILTER_USE_KEY));
     print_r("count  ");
     print_r($count);
-    if ( $pos = array_search($uri, $prod) ){
+    $pos = array_search($uri, $prod);
+    if ( $pos ){
         print_r($pos);
+        print_r("***FOUND***");
         $count[$pos] = $count[$pos] + 1;
     } else {
         print_r("****NOT FOUND****");
