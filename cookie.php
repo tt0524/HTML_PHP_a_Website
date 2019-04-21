@@ -26,8 +26,12 @@ setcookie('history',implode('|', $his),$expire);
  if (!isset($_COOKIE['view_count'])) {           // if no product history
     $view_count = array($uri => 1);
     $prod = array_keys($view_count);
+    echo "prod";
+    print_r($prod);
     $count = array_values($view_count);
+    echo "count";
     $view_count = cross_merge_array($prod, $count);
+    print_r($count);
     print_r ("view_count ");
     print_r($view_count);              // just store product uri
  } else {
