@@ -49,7 +49,8 @@ setcookie('history',implode('|', $his),$expire);
     print_r("count  ");
     print_r($count);
     if ( $pos = array_search($uri, $prod) ){
-     $count[$pos] = $count[$pos] + 1;
+        print_r($pos);
+        $count[$pos] = $count[$pos] + 1;
     } else {
         array_push($prod, $uri);
         array_push($count, 1);
