@@ -56,6 +56,10 @@ setcookie('history',implode('|', $his),$expire);
     print_r($view_count);
  }
 
+
+print_r("/////TEST SECTION***");
+$test_array = array(1,1,2,3);
+print_r(array_values($test_array));
 setcookie('view_count',implode('|', $view_count),$expire);
 
 
