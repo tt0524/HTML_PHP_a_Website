@@ -48,6 +48,7 @@ setcookie('history',implode('|', $his),$expire);
     $count = array_filter($temp, "odd",ARRAY_FILTER_USE_KEY);
     print_r("count  ");
     print_r($count);
+    print_r(array_values($count));
     $pos = array_search($uri, $prod);
     $count[$pos] += 1;
     $view_count = cross_merge_array($prod, $count);
