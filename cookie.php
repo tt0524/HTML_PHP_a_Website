@@ -25,22 +25,22 @@ setcookie('history',implode('|', $his),$expire);
 
  if (!isset($_COOKIE['view_count'])) {           // if no product history
     $view_count = array($uri => 1);
-    echo "view_count ";
+    print_r ("view_count ");
     print_r($view_count);              // just store product uri
  } else {
     $temp = explode('|',$_COOKIE['view_count']);
-    echo "temp  ";
+    print_r( "temp  ");
     print_r($temp);
     $prod = array_filter($temp, "even",ARRAY_FILTER_USE_KEY);
-    echo "prod  ";
+    print_r( "prod  ");
     print_r($prod);
     $count = array_filter($temp, "odd",ARRAY_FILTER_USE_KEY);
-    echo "count  ";
+    print_r("count  ");
     print_r($count);
     $pos = array_search($uri, $prod);
     $count[$pos] += 1;
     $view_count = cross_merge_array($prod, $count);
-    echo "view_count  ";
+    print_r("view_count  ");
     print_r($view_count);
  }
 
