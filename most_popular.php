@@ -6,7 +6,9 @@ if ( isset($_COOKIE['view_count']) ) {
     $count = array_values(array_filter($temp, "odd",ARRAY_FILTER_USE_KEY));
     $view_count = cross_merge_array($prod, $count);
     arsort($view_count);
+    print_r($view_count);
     $view_count_5 = array_slice($view_count, 0, 5);
+    print_r($view_count_5);
 }
 
 
