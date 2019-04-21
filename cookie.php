@@ -74,7 +74,7 @@ print_r(array_key_exists($uri, $prod));
 print_r("search**");
 print_r(array_search($uri, $prod));
 print_r("ISSET****")
-print_r(isset($prdo[$uri]));
+print_r(isset($prod[$uri]));
 
 function odd($var)
 {
