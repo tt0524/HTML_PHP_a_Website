@@ -34,6 +34,9 @@ setcookie('history',implode('|', $his),$expire);
     print_r($count);
     print_r ("view_count ");
     print_r($view_count);              // just store product uri
+    $test = implode('|', $view_count);
+    print_r ("After Implode ");
+    print_r($test);
  } else {
     print_r($_COOKIE['view_count']);
     $temp = explode('|',$_COOKIE['view_count']);
@@ -51,14 +54,6 @@ setcookie('history',implode('|', $his),$expire);
     print_r("view_count  ");
     print_r($view_count);
  }
-
-$test_array = array('p1_furniture' => 1);
-$prod = array_keys($view_count);
-$count = array_values($view_count);
-$view_count = cross_merge_array($prod, $count);
-$test = implode('|', $view_count);
-echo $test;
-print_r($test);
 
 setcookie('view_count',implode('|', $view_count),$expire);
 
