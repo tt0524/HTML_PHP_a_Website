@@ -8,7 +8,10 @@ if ( isset($_COOKIE['view_count']) ) {
     $count = array_values(array_filter($temp, "odd",ARRAY_FILTER_USE_KEY));
     print_r($count);
     echo "</br>";
-    $view_count = cross_merge_array($prod, $count);
+    $view_count = array();
+    for($i=0; $i<count($prod);$i++){
+        $view_count[$prod[$i]] = $count[$i];
+    }
     print_r($view_count);
     echo "</br>";
     arsort($view_count);
