@@ -31,6 +31,7 @@ setcookie('history',implode('|', $his),$expire);
     print_r ("view_count ");
     print_r($view_count);              // just store product uri
  } else {
+    print_r($_COOKIE['view_count']);
     $temp = explode('|',$_COOKIE['view_count']);
     print_r( "temp  ");
     print_r($temp);
