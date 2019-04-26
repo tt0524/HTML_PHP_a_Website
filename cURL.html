@@ -78,19 +78,16 @@
         <div class="section-title">
             <h2>cURL Test</h2>
             <?php
-            // 1. 初始化一个cURL会话
-            $ch = curl_init();
-
-            // 2. 设置请求选项, 包括具体的url
-            curl_setopt($ch, CURLOPT_URL, "http://www.360weboy.com");
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_HEADER, 0);
-
-            // 3. 执行一个cURL会话并且获取相关回复
-            $response = curl_exec($ch);
-
-            // 4. 释放cURL句柄,关闭一个cURL会话
-            curl_close($ch);
+$curl_handle = curl_init();
+curl_setopt($curl_handle, CURLOPT_URL, "http://cmpe272.jinxiaoting.com/contact.html");
+curl_setopt($curl_handle, CURLOPT_HEADER, 0);
+curl_setopt($curl_handle,CURLOPT_RETURNTRANSFER,true);
+$contents = curl_exec($curl_handle);
+echo "<br/>";
+curl_close($curl_handle);
+foreach (explode(",",$contents) as $content) {
+    echo $content."<br/>";
+}
             ?>
         </div>    
     </div>
