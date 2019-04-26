@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title></title>
+    <title>Home</title>
 
         <!-- Required CSS files -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
@@ -24,10 +24,7 @@
         <span class="preloader-spin"></span>
     </div>
     <div class="site">
-        
-
-
-            <header>
+        <header>
             <div class="container">
                 <div class="row">
                     <div class="col-6 col-sm-3 logo-column">
@@ -45,14 +42,14 @@
                             <div class="header-social">
                                 <a href="#" class="fa fa-facebook"></a>
                                 <a href="#" class="fa fa-twitter"></a>
-                                <a href="#" class="fa fa-github"></a>
+                                <a href="https://github.com/southinsouth/html" class="fa fa-github"></a>
                             </div>
                         </div>
                         <nav id="menu" class="d-none d-lg-block">
                             <ul>
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="index.html">About</a></li>
-                                <li><a href="cURL.html">cURL</a></li>
+                                <li><a href="index.html">Services</a></li>
                                 <li class="has-child"><a href="#">Products</a>
                                     <ul class="sub-menu">
                                         <li><a href="p1_furniture.html">Furniture</a></li>
@@ -76,56 +73,29 @@
                     </div>
                 </div>
             </div>
-        </header>    <div class="page-title sp" style="background-image: url(assets/img/page-title.jpg)">
-    <div class="container text-center">
-        <h4>Log in</h4>
-    </div>
-</div>        
-    <div class="contact-area sp">
+        </header><div class="portfolio-area sp">
     <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <form method="post" action="doLogin.php" class="contact-form">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <input type="text" placeholder="Username" name="username">
-                        </div>
-                        <div class="col-lg-6">
-                            <input type="password" placeholder="Password" name="password">
-                        </div>
-                        <div class="col-lg-12">
-                            <input class="button" type="submit" value="Log in">
-                        </div>
-                    </div>                  
-                </form>
-            </div>
-        </div>
+        <div class="section-title">
+            <h2>cURL Test</h2>
+            <?php
+            // 1. 初始化一个cURL会话
+            $ch = curl_init();
+
+            // 2. 设置请求选项, 包括具体的url
+            curl_setopt($ch, CURLOPT_URL, "http://www.360weboy.com");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+
+            // 3. 执行一个cURL会话并且获取相关回复
+            $response = curl_exec($ch);
+
+            // 4. 释放cURL句柄,关闭一个cURL会话
+            curl_close($ch);
+            ?>
+        </div>    
     </div>
-</div>
-<footer>
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-3 footer_widget">
-                    <div class="inner">
-                        <h4>About</h4>
-                        <p>Design Your Home was founded in March, 2019. Our mission is to be the leading design company in Bay Area and to provide highest quality design service.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 footer_widget">
-                    <div class="inner">
-                        <h4>Contacts</h4>
-                        <h5>CMPE 272</h5>
-                        <p>San Jose State University<br>1000 Tooth Fairy Road  <br>San Jose, CA 91234<br>P: (123) 456-7890</p>
-                        <form action="#" class="nw_form">
-                            <input placeholder="Enter your email" type="email">
-                            <button><i class="fa fa-paper-plane"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div><div class="faq-area sp bg2">
+</div><footer>
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
