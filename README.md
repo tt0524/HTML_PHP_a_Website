@@ -8,8 +8,8 @@
 
 #### Group Project
 * Team Members
-- Wenxiang Hu, 009034246
-- Xiaoting Jin, 013842192
-- Tianyu Cao, 010174346
-- Nicky Lin, 010549799
-* Check our team's demo video in [Youtube](ttps://youtu.be/4iv1sLHldNI)
+  - Wenxiang Hu, 009034246
+  - Xiaoting Jin, 013842192
+  - Tianyu Cao, 010174346
+  - Nicky Lin, 010549799
+* Check our team's demo video in [Youtube](https://youtu.be/4iv1sLHldNI)
