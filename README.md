@@ -12,4 +12,4 @@
   - Xiaoting Jin, 013842192
   - Tianyu Cao, 010174346
   - Nicky Lin, 010549799
-* Check our team's demo video in YouTube, [part1](https://youtu.be/4iv1sLHldNI), [part2](https://youtu.be/5lOZc3If0J0)
+* Check our team's demo video in YouTube: [part1](https://youtu.be/4iv1sLHldNI), [part2](https://youtu.be/5lOZc3If0J0)
